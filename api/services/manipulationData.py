@@ -7,10 +7,6 @@ class manipulationData:
         self.listDictNA = []
         self.listnotNA=[]
     
-    def insight_dataframe(self):
-        dfInsight=self.df
-        return dfInsight
-    
     def valueCell_isna(self):
         self.porcColumn_min = self.n_columns * 0.60
         self.n_row,self.n_columns
