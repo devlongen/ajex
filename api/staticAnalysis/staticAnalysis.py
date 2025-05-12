@@ -18,53 +18,36 @@ class staticAnalysis:
         dict_length = {"length_row":self.lengthrow_dataframe,"length_col":self.lengthcol_dataframe}
         return dict_length
     
-    def basic_statistics(self) -> dict:
-        # variables
-        qtd_row = self.lengthrow_dataframe
-        qtd_column = self.lengthcol_dataframe
-
-        
-        # create function
-        def mean_dataframe(qtd_row,qtd_column) -> dict:
-            sum_value=0
-            for i in range(qtd_row):
-                value = self.df.iloc[i]
-                if value is int:
-                    sum_value = sum_value + value
-                else:
-                    pass
-            mean_var = sum_value/qtd_row
-            dict_mean = {"mean":mean_var}
+    def mean_dataframe(self,qtd_row,qtd_column) -> dict:
+        sum_value=0
+        for i in range(qtd_row):
+            value = self.df.iloc[i]
+            if value is int:
+                sum_value = sum_value + value
+            else:
+                pass
+        mean_var = sum_value/qtd_row
+        dict_mean = {"mean":mean_var}
             
-            print(dict_mean)
-            return dict_mean
+        print(dict_mean)
+        return dict_mean
         
-        def sum_dataframe(qtd_row,qtd_column) -> dict:
-            return None
-        def min_dataframe(qtd_row,qtd_column) -> dict:
-            return None
-        def max_dataframe(qtd_row,qtd_column) -> dict:
-            return None
-        def mfv_dataframe(qtd_row,qtd_column) -> dict:
-            return None
-        def median_dataframe(qtd_row,qtd_column) -> dict:
-            return None
-        def cov_dataframe(qtd_row,qtd_column) -> dict:
-            return None
-        def cor_dataframe(qtd_row,qtd_column) -> dict:
-            return None
+    def sum_dataframe(self,qtd_row,qtd_column) -> dict:
+        return None
+    def min_dataframe(self,qtd_row,qtd_column) -> dict:
+        return None
+    def max_dataframe(self,qtd_row,qtd_column) -> dict:
+        return None
+    def mfv_dataframe(self,qtd_row,qtd_column) -> dict:
+        return None
+    def median_dataframe(self,qtd_row,qtd_column) -> dict:
+        return None
+    def cov_dataframe(self,qtd_row,qtd_column) -> dict:
+        return None
+    def cor_dataframe(self,qtd_row,qtd_column) -> dict:
+        return None
         
-        # function
-        mean_dataframe(qtd_row,qtd_column)
-        sum_dataframe(qtd_row,qtd_column)
-        min_dataframe(qtd_row,qtd_column)
-        max_dataframe(qtd_row,qtd_column)
-        mfv_dataframe(qtd_row,qtd_column)
-        median_dataframe(qtd_row,qtd_column)
-        cov_dataframe(qtd_row,qtd_column)
-        cor_dataframe(qtd_row,qtd_column)
-
-
+        
 app = staticAnalysis(csv)
 
-test = app.basic_statistics()
+test = app.mean_dataframe()
