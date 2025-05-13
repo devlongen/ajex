@@ -20,25 +20,23 @@ class staticAnalysis:
     
     def mean_dataframe(self) -> json:
         df_tratament = self.df
-        qtd_row=self.lengthrow_dataframe
-        for col in df_tratament:
-            for value in range(qtd_row):
-                test=df_tratament.loc[value,col]
-        return None
+        mean=df_tratament.mean(numeric_only=True,skipna=True)
+        json_response=json.dumps({"mean:":mean})
+        return json_response
         
-    def sum_dataframe(self,qtd_row,qtd_column) -> json:
+    def sum_dataframe(self) -> json:
         return None
-    def min_dataframe(self,qtd_row,qtd_column) -> json:
+    def min_dataframe(self) -> json:
         return None
-    def max_dataframe(self,qtd_row,qtd_column) -> json:
+    def max_dataframe(self) -> json:
         return None
-    def mfv_dataframe(self,qtd_row,qtd_column) -> json:
+    def mfv_dataframe(self) -> json:
         return None
-    def median_dataframe(self,qtd_row,qtd_column) -> json:
+    def median_dataframe(self) -> json:
         return None
-    def cov_dataframe(self,qtd_row,qtd_column) -> json:
+    def cov_dataframe(self) -> json:
         return None
-    def cor_dataframe(self,qtd_row,qtd_column) -> json:
+    def cor_dataframe(self) -> json:
         return None
         
         
