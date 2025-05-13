@@ -21,7 +21,8 @@ class staticAnalysis:
     def mean_dataframe(self) -> json:
         df_tratament = self.df
         mean=df_tratament.mean(numeric_only=True,skipna=True)
-        json_response=json.dumps({"mean:":mean})
+        dict_mean = mean.to_dict()
+        json_response=json.dumps(dict_mean)
         return json_response
         
     def sum_dataframe(self) -> json:
