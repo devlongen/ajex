@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 csv = pd.read_csv("/home/iagolongen/Downloads/student_habits_performance.csv")
-class staticAnalysis:
+class bi_report:
     def __init__(self,df):
         self.df = pd.DataFrame(df) # get df the front
         self.lengthrow_dataframe,self.lengthcol_dataframe=self.df.shape # use pandas.shape(module)
@@ -50,7 +50,7 @@ class staticAnalysis:
         return None
         
         
-app = staticAnalysis(csv)
+app = bi_report(csv)
 
 test = app.median_dataframe()
 print(test)
