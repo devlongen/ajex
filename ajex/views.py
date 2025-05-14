@@ -3,7 +3,7 @@ from api.user_data.userData import userData
 from api.services.manipulationData import manipulationData
 import io
 from django.http import FileResponse
-from api.staticAnalysis.staticAnalysis import staticAnalysis
+from api.bi_report.bi import bi_report
 # Create your views here.
 
 def index(request):
@@ -50,5 +50,5 @@ def manipulation_data_local(param):
 
 def user_analysis():
      sheetNew=0
-     sheet = staticAnalysis(df=sheetNew)
+     sheet = bi_report(df=sheetNew)
      return sheet
