@@ -5,25 +5,24 @@ class staticAnalysis:
     def __init__(self,df):
         self.df = pd.DataFrame(df) # get df the front
         self.lengthrow_dataframe,self.lengthcol_dataframe=self.df.shape # use pandas.shape(module)
-        self.mean_dataframe_col=json # create function mean and for col
-        self.sum_dataframe_col=json # create function sum and for col
-        self.min_dataframe_col=json # create function min and for col
-        self.max_dataframe_col=json # create function max and for col
-        self.mfv_dataframe_col=json # create function modeest
-        self.median_dataframe_col=json # create function
-        self.cov_dataframe_col=json # create function
-        self.cor_dataframe_col=json # create function
+        
 
     def lenghtDataframe(self) -> json:
-        json_length = {"length_row":self.lengthrow_dataframe,"length_col":self.lengthcol_dataframe}
-        return json_length
+        length_xandy = {"length_row":self.lengthrow_dataframe,"length_col":self.lengthcol_dataframe}
+        json_response=json.dumps(length_xandy)
+        return json_response
     
     def mean_dataframe(self) -> json:
-        df_tratament = self.df
-        mean=df_tratament.mean(numeric_only=True,skipna=True)
-        dict_mean = mean.to_dict()
-        json_response=json.dumps(dict_mean)
-        return json_response
+        try:
+            mean=self.df.mean(numeric_only=True,skipna=True)
+            dict_mean = mean.to_dict()
+            json_response=json.dumps(dict_mean)
+            return json_response
+        except:
+            message="Error in the code not support for the mean dataframe"
+            json_response=json.dumps(message)
+            return json_response
+        
         
     def sum_dataframe(self) -> json:
         return None
@@ -34,7 +33,17 @@ class staticAnalysis:
     def mfv_dataframe(self) -> json:
         return None
     def median_dataframe(self) -> json:
-        return None
+        try:
+            median=self.df.median(numeric_only=True,skipna=True)
+            dict_median = median.to_dict()
+            json_response=json.dumps(dict_median)
+            return json_response
+        except:
+            message="Error in the code not support for the median dataframe"
+            json_response=json.dumps(message)
+            return json_response
+        
+
     def cov_dataframe(self) -> json:
         return None
     def cor_dataframe(self) -> json:
@@ -43,4 +52,5 @@ class staticAnalysis:
         
 app = staticAnalysis(csv)
 
-test = app.mean_dataframe()
+test = app.median_dataframe()
+print(test)
