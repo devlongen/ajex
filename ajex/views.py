@@ -52,3 +52,6 @@ def user_analysis():
      sheetNew=0
      sheet = bi_report(df=sheetNew)
      return sheet
+
+def filter_rule(request):
+    return render(request,"filterRule.html")

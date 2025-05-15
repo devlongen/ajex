@@ -8,16 +8,18 @@
     <title>Ajex</title>
 </head>
 <body>
-    <h1 id="titleApp">Welcome to Ajex!</h1>
+    <h1 id="titleApp">Now choose your filter rules.</h1>
     <form action="" method="POST" name="formPost" class="formPost" id="formData" enctype="multipart/form-data">
         {% csrf_token %}
-        <h3 id="formTitle">Add your excel or csv file in this button below:</h3>
         <label for="inputFile" class="inputFile">
-            <input type="file" name="fileSheet" id="fileSheet" accept=".xlsx,.csv">
-            <input type="hidden" name="nameSheet" id="nameSheet">     
+            <p>Sheet rules:</p>
+            <input type="number" name="colDelet" id="colDelet" placeholder="Specify how many columns to drop if they have NaN values.">
+            <input type="number" name="porcDelet" id="porcDelet" placeholder="Select percentage to delete is row. (%)">
+            <p>Report Bi?</p>
+            <input type="radio" name="acceptbi_report" id="acceptbi_report" value="Yes"> Yes
+            <input type="radio" name="acceptbi_report" id="acceptbi_report" value="No"> No
             <input type="hidden" id="csrf-token" value="{{ csrf_token }}">   
         </label>
-        <p></p>
         <input type="submit" value="Enviar" onclick="validationForms()">
     </form>
     <script src="{% static '/js/script.js' %}"></script>
