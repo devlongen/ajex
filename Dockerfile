@@ -2,7 +2,9 @@ FROM python:3.13
 
 WORKDIR /home/ajex
 
-COPY /ajex/ ./ajex/
+COPY ./project ./project/
+
+COPY ./static ./static/
 
 COPY requirements.txt ./
 
